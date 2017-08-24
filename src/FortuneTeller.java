@@ -11,6 +11,11 @@ public class FortuneTeller {
 		System.out.println("Please enter your last name:");
 		String lastName = input.next();
 		
+		System.out.println("Please enter your age:");
+		int age = input.nextInt();
+		
+		
+		
 		input.close();
 
 	}
