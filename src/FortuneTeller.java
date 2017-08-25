@@ -14,18 +14,6 @@ public class FortuneTeller {
 		System.out.println("Please enter your age:");
 		int age = input.nextInt();
 
-		System.out.println("Please enter your birth month as a number:");
-		int birthMonth = input.nextInt();
-
-		System.out.println(
-				"Please enter your favorite ROYGBIV color:  \n\tIf you do not know what the ROYGBIV colors are, please enter the word \"Help\"");
-		String colorOfTheRainbow = input.next();
-
-		System.out.println("Please enter the number of siblings you have:");
-		int numberOfSiblings = input.nextInt();
-
-		input.close();
-
 		int yearsToRetirement;
 
 		if (age % 2 == 0) {
@@ -33,6 +21,9 @@ public class FortuneTeller {
 		} else {
 			yearsToRetirement = 25;
 		}
+
+		System.out.println("Please enter your birth month as a number:");
+		int birthMonth = input.nextInt();
 
 		double bankBalanceAtRetirement;
 
@@ -46,21 +37,9 @@ public class FortuneTeller {
 			bankBalanceAtRetirement = 0.00;
 		}
 
-		String vacationHomeLocation;
-
-		if (numberOfSiblings == 0) {
-			vacationHomeLocation = "Savannah, GA";
-		} else if (numberOfSiblings == 1) {
-			vacationHomeLocation = "North Wildwood, NJ";
-		} else if (numberOfSiblings == 2) {
-			vacationHomeLocation = "Key West, FL";
-		} else if (numberOfSiblings == 3) {
-			vacationHomeLocation = "Fiji";
-		} else if (numberOfSiblings > 3) {
-			vacationHomeLocation = "Newport Beach, CA";
-		} else {
-			vacationHomeLocation = "Rikers Island, NY - where you will be staying after your obvious fratricide.";
-		}
+		System.out.println(
+				"Please enter your favorite ROYGBIV color:  \n\tIf you do not know what the ROYGBIV colors are, please enter the word \"Help\".");
+		String colorOfTheRainbow = input.next();
 
 		String colorOfTheRainbowToLowerCase = colorOfTheRainbow.toLowerCase();
 		String modeOfTransportation = null;
@@ -78,14 +57,35 @@ public class FortuneTeller {
 		} else if (colorOfTheRainbowToLowerCase.equals("indigo")) {
 			modeOfTransportation = "yacht";
 		} else if (colorOfTheRainbowToLowerCase.equals("violet")) {
-			modeOfTransportation = "Hyperloop";
+			modeOfTransportation = "hyperloop";
 		} else if (colorOfTheRainbowToLowerCase.equals("help")) {
 			System.out.println("The ROYGBIV colors are red, orange, yellow, green, blue, indigo, violet.");
+		}
+
+		System.out.println("Please enter the number of siblings you have:");
+		int numberOfSiblings = input.nextInt();
+
+		String vacationHomeLocation;
+
+		if (numberOfSiblings == 0) {
+			vacationHomeLocation = "Savannah, GA";
+		} else if (numberOfSiblings == 1) {
+			vacationHomeLocation = "North Wildwood, NJ";
+		} else if (numberOfSiblings == 2) {
+			vacationHomeLocation = "Key West, FL";
+		} else if (numberOfSiblings == 3) {
+			vacationHomeLocation = "Fiji";
+		} else if (numberOfSiblings > 3) {
+			vacationHomeLocation = "Newport Beach, CA";
+		} else {
+			vacationHomeLocation = "Rikers Island, NY (where you will be staying after your obvious fratricide)";
 		}
 
 		System.out.println(firstName + " " + lastName + " will retire in " + yearsToRetirement + " years with $"
 				+ bankBalanceAtRetirement + " in the bank, a vacation home in " + vacationHomeLocation
 				+ ", and travel by " + modeOfTransportation + ".");
+
+		input.close();
 
 	}
 
