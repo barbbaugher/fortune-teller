@@ -62,8 +62,30 @@ public class FortuneTeller {
 			vacationHomeLocation = "Rikers Island, NY - where you will be staying after your obvious fratricide.";
 		}
 
-		System.out.println(firstName + " " + lastName + " will retire in " + yearsToRetirement + " years with "
-				+ vacationHomeLocation);
+		String colorOfTheRainbowToLowerCase = colorOfTheRainbow.toLowerCase();
+		String modeOfTransportation = null;
+
+		if (colorOfTheRainbowToLowerCase.equals("red")) {
+			modeOfTransportation = "jet pack";
+		} else if (colorOfTheRainbowToLowerCase.equals("orange")) {
+			modeOfTransportation = "segway";
+		} else if (colorOfTheRainbowToLowerCase.equals("yellow")) {
+			modeOfTransportation = "hoverboard";
+		} else if (colorOfTheRainbowToLowerCase.equals("green")) {
+			modeOfTransportation = "Formula 1 race car";
+		} else if (colorOfTheRainbowToLowerCase.equals("blue")) {
+			modeOfTransportation = "DeLorean";
+		} else if (colorOfTheRainbowToLowerCase.equals("indigo")) {
+			modeOfTransportation = "yacht";
+		} else if (colorOfTheRainbowToLowerCase.equals("violet")) {
+			modeOfTransportation = "Hyperloop";
+		} else if (colorOfTheRainbowToLowerCase.equals("help")) {
+			System.out.println("The ROYGBIV colors are red, orange, yellow, green, blue, indigo, violet.");
+		}
+
+		System.out.println(firstName + " " + lastName + " will retire in " + yearsToRetirement + " years with $"
+				+ bankBalanceAtRetirement + " in the bank, a vacation home in " + vacationHomeLocation
+				+ ", and travel by " + modeOfTransportation + ".");
 
 	}
 
